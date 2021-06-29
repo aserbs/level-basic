@@ -1,0 +1,70 @@
+#container{
+    display: flex;
+}
+.vector{
+    position: absolute;
+    height: 0px;
+    left: 17.44%;
+    right: 19.34%;
+    top: 88px;
+    border: 1px solid #828282;
+    transform: matrix(1, 0, 0, 1, 0, 0);
+    }
+
+.contacts{
+    position: absolute;
+    left: 77.48%;
+    right: 17.16%;
+    top: 3%;
+    bottom: 98.82%;
+    font-family: Gilroy-Bold;
+    font-size: 18px;
+    line-height: 22px;
+    color: #828282;
+}
+
+.portfolio{
+    position: absolute;
+    left: 61.71%;
+    right: 33.29%;
+    top: 3%;
+    bottom: 99.03%;
+    font-family: Gilroy-Bold;
+    font-size: 18px;
+    line-height: 22px;
+    color: #828282;
+}
+.skills{
+    position: absolute;
+    left: 48.09%;
+    right: 48.99%;
+    top: 3%;
+    bottom: 98.82%;
+    font-family: Gilroy-Bold;
+    font-size: 18px;
+    line-height: 22px;
+    color: #828282;
+}
+.aboutme{
+    position: absolute;
+    left: 31.62%;
+    right: 62.68%;
+    top: 3%;
+    bottom: 98.82%
+    font-family: Gilroy-Bold;
+    font-size: 18px;
+    line-height: 22px;
+    font-family: Gilroy-Bold;
+    color: #828282;
+}
+.home{
+    position: absolute;
+    left: 17.44%;
+    right: 79.15%;
+    top: 3%;
+    bottom: 98.82%;
+    font-family: Gilroy-Bold;
+    font-size: 18px;
+    line-height: 22px;
+    color: #070707;
+}
