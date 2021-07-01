@@ -1,39 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' href='style.css'>
     <title>some title</title>
-    
+
 </head>
+
 <body>
-   <header>
-        <div class="contacts">
-        Contacts
+    <header class="header">
+        <div class="container">
+            <nav class="header__menu menu">
+                <a href="" class="nav-link active">Home</a>
+                <a href="" class="nav-link" id="id">About me</a>
+                <a href="" class="nav-link">Skills</a>
+                <a href="" class="nav-link">Portfolio</a>
+                <a href="" class="menu__nav-link">Contacts</a>
+            </nav>
+            <h1 class="header__slogan">
+                Serbinenko Alexey
+            </h1>
+            <div class="header__info my-info">
+                some info lyublyu havat
+            </div>
+            <div class="header__language lagnuage-menu">
+                <a class="lagnuage-menu__link  lagnuage-menu__link--active">rus</a>
+                <a class="lagnuage-menu__link">eng</a>
+            </div>
+            <div class="header__avatar avatar"><img class="avatar__img"
+                    src="C:\Users\user\Desktop\my\level-basic\images\forbasic1.png"></div>
         </div>
-        
-        <div class="portfolio">
-        Portfolio
-        </div>
-
-        <div class="skills">
-        Skills
-        </div>
-
-        <div class="aboutme">
-        About me
-        </div>
-
-        <div class="home">
-        Home
-        </div>
-        
-        <div class="vector">
     </header>
+
+    <section class="about-me gray">
+        <div class="container">
+            <h2 class="about-me__slogan2">About me</h2>
+            <p class="about-me__info my-info">Hi, i`m Alexey - ...</p>
+            <p class="about-me__info my-info">i`m studing...</p>
+            <p class="about-me__info my-info">ready to...</p>
+        </div>
+    </section>
+
+    <section class="skills">
+        <div class="container">
+            <h2 class="skills__slogan2">Skills</h2>
+            <p class="skills__info my-info"> i work in such programs as</p>
+
+            <div class="skills__info programs-info">
+                <img class="programs-img" src="C:\Users\user\Desktop\my\level-basic\images\forbasicPs.png">
+                <p class="skills__info programs-name">Adobe<br>Photoshop</p>
+                <img class="rating-img" src="C:\Users\user\Desktop\my\level-basic\images\forbasicStars.png">
+            </div>
+
+            <div class="skills__info programs-info">
+                <img class="programs-img" src="C:\Users\user\Desktop\my\level-basic\images\forbasicAe.png">
+                <p class="skills__info programs-name">Adobe<br>After Effects</p>
+                <img class="rating-img" src="C:\Users\user\Desktop\my\level-basic\images\forbasicStars.png">
+            </div>
+
+            <div class="skills__info programs-info">
+                <img class="programs-img" src="C:\Users\user\Desktop\my\level-basic\images\forbasicAi.png">
+                <p class="skills__info programs-name">Adobe<br>Illustrator</p>
+                <img class="rating-img" src="C:\Users\user\Desktop\my\level-basic\images\forbasicStars.png">
+            </div>
+
+            <div class="skills__info programs-info">
+                <img class="programs-img" src="C:\Users\user\Desktop\my\level-basic\images\forbasicFigma.png">
+                <p class="skills__info programs-name">Figma</p>
+                <img class="rating-img" src="C:\Users\user\Desktop\my\level-basic\images\forbasicStars.png">
+            </div>
+        </div>
+    </section>
+
+    <section class="portfolio gray">
+        <div class="container">
+            <h2 class="portfolio__slogan2">Portfolio</h2>
+            <div class="portfolio__info projects-info">
+                <img class="projects-img" src="C:\Users\user\Desktop\my\level-basic\images\forbasicYou.png">
+                <p> <a class="projects-link" href="https://www.youtube.com/">Youtube</a></p>
+            </div>
+            <div class="portfolio__info projects-info">
+                <img class="projects-img" src="C:\Users\user\Desktop\my\level-basic\images\d.png">
+                <p><a class="projects-link" href="https://www.Twitch.com/">Twitch</a></p>
+            </div>
+    </section>
+    
+    <footer class="footer-main">
+        <div class="container">
+            <h2 class="contacts__slogan2">Contacts</h2>
+            <p class="contacts__info my-info">Want to know more or just chat?<br>You are welcome!</p>
+            
+            <div class="social-contacts">
+                <a class="contacts-link" href="http:\\www.Instagram.com"><img class="contacts-img" src="images/inst.png"></a>
+            </div>
+                
+            <p class="contacts__info gray-info">Like me on<br>linkedIN,Inst...</p>
+        </div>
+
+    </footer>
+
+
+
+
 </body>
+
 </html>
-
-
-
