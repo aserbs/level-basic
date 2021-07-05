@@ -1,6 +1,173 @@
-.container{
-    font-family: Gilroy-Bold;
+.container {
+
+    width: 950px;
+    margin: auto;
 }
-.gray{
+
+.gray {
     background-color: #F6F6F6;
+}
+
+.hr {
+    border: 1px solid #828282;
+}
+
+.menu {
+    font-size: 18px;
+    line-height: 22px;
+}
+
+.menu__nav-link {
+    text-decoration: none;
+    color: #828282;
+    position: relative;
+    padding-left: 17%;
+}
+
+.menu__nav-link--active {
+    color: #070707;
+    text-decoration: none;
+}
+
+.header__info {
+    display: inline-block;
+}
+
+.header__slogan {
+    font-size: 47px;
+    line-height: 59px;
+}
+
+.my-info {
+    font-size: 18px;
+    line-height: 22px;
+    padding-left: 20%;
+}
+
+.language-menu {
+    font-size: 16px;
+    line-height: 20px;
+    padding-left: 41%;
+    color: #828282;
+}
+
+.language-menu__link--active {
+    color: black;
+}
+
+.header__avatar {
+    text-align: center;
+    margin: 0;
+}
+
+.avatar__img {
+    width: 100%;
+}
+
+.about-me {
+    text-align: center;
+    height: 380px;
+
+}
+
+.about-me__section-title {
+    font-size: 34px;
+    line-height: 42px;
+    padding-top: 80px;
+    margin-bottom: 5px;
+}
+
+.about-me__info {
+    font-size: 18px;
+    line-height: 22px;
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
+.skills__section-title {
+    font-size: 34px;
+    line-height: 42px;
+    text-align: center;
+}
+
+.skills__work-info {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+
+.programs-info {
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    padding-left: 9.5%;
+    margin-bottom: 40px;
+}
+
+.programs-info--1 {
+    display: inline-block;
+    text-align: center;
+}
+
+.programs-name {
+    color: #828282;
+}
+
+.portfolio__section-title {
+    font-size: 34px;
+    line-height: 42px;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.projects-link {
+    font-size: 18px;
+    line-height: 22px;
+    text-decoration-line: underline;
+    color: black;
+}
+
+.projects-name {
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.contacts__section-title {
+    font-size: 34px;
+    line-height: 42px;
+    text-align: center;
+}
+
+.contacts__info {
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+}
+
+.send{
+    text-align: center;
+}
+.send-message{
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+}
+
+.social-contacts{
+    text-align: center;
+    padding-top: 20px;
+}
+
+.contacts-img{
+    position: relative;
+    padding-left: 5%;
+}
+
+.gray-info {
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #828282;
+    padding-bottom: 40px;
 }
