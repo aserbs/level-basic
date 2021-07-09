@@ -6,44 +6,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' href='style.css'>
-    <title>some title</title>
+    <title>first site</title>
 
 </head>
 
 <body>
     <header class="header">
         <div class="container">
-            <nav class="header__menu menu">
+            <nav class="header__menu menu flex-block">
                 <a href="" class="menu__nav-link--active">Home</a>
                 <a href="#about-me" class="menu__nav-link">About me</a>
                 <a href="#skills" class="menu__nav-link">Skills</a>
                 <a href="#portfolio" class="menu__nav-link">Portfolio</a>
                 <a href="#contacts" class="menu__nav-link">Contacts</a>
             </nav>
-            <hr>
-            <h1 class="header__info header__slogan">
-                Serbinenko <br>Alexey
-            </h1>
-            <div class="header__info my-info">
-                somebody <br>18 years old
-            </div>
-            <div class="header__info language-menu">
-                <a class="language-menu__link--active">eng</a>
-                <a class="language-menu__link">|ru</a>
-            </div>
 
-            <figure class="header__avatar avatar"> <img class="avatar__img"
+            <div class="header__info flex-block">
+                <h1 class="header__slogan">
+                    Serbinenko <br>Alexey
+                </h1>
+                <div class="my-info">
+                    ... <br>18 years old
+                </div>
+                <div class="language-menu">
+                    <p class="language-menu__p"><a class="language-menu__link">RU</a>
+                        <a class="language-menu__link--active">ENG</a></p>
+                </div>
+            </div>
+            <figure class="header__avatar"> <img class="avatar__img"
                     src="C:\Users\user\Desktop\my\level-basic\images\forbasic1.png">
             </figure>
-
         </div>
     </header>
 
     <section class="about-me gray">
         <div class="container">
             <h2 class="about-me__section-title"><a name="about-me">About me</a></h2>
-            <p class="about-me__info">Hi, i`m Alexey - somebody from kyiv.<br>i`m intereste in something</p>
-            <p class="about-me__info">i`m at courses <br>"something"</p>
+            <p class="about-me__info">Hi, i`m Alexey - ... from kyiv.<br>i`m intereste in ...</p>
+            <p class="about-me__info">i`m at courses <br>"..."</p>
             <p class="about-me__info">ready to work <br> or do smth</p>
         </div>
     </section>
@@ -52,37 +52,59 @@
         <div class="container">
             <h2 class="skills__section-title"><a name="skills">Skills</a></h2>
             <p class="skills__work-info"> i work in such programs as</p>
+            <div class="flex-block">
+                <div class="skills__info programs-info">
+                    <img class="programs-img" src="C:\Users\user\Desktop\my\level-basic\images\forbasicPs.png"
+                        width="89px" height="89px">
+                    <p class="skills__info programs-name">Adobe<br>Photoshop</p>
+                    <div class="rating">
+                        <span class="rating__stars active"></span>
+                        <span class="rating__stars active"></span>
+                        <span class="rating__stars active"></span>
+                        <span class="rating__stars active"></span>
+                        <span class="rating__stars"></span>
+                    </div>
+                </div>
 
-            <div class="skills__info programs-info--1">
-                <img class="programs-img" src="C:\Users\user\Desktop\my\level-basic\images\forbasicPs.png" width="89px"
-                    height="89px">
-                <p class="skills__info programs-name">Adobe<br>Photoshop</p>
-                <img class="rating-img" src="C:\Users\user\Desktop\my\level-basic\images\forbasicStars.png"
-                    width="166px" height="26">
-            </div>
+                <div class="skills__info programs-info">
+                    <img class="programs-img" src="C:\Users\user\Desktop\my\level-basic\images\forbasicAe.png"
+                        width="89px" height="89px">
+                    <p class="skills__info programs-name">Adobe<br>After Effects</p>
+                    <div class="rating">
+                        <span class="rating__stars active"></span>
+                        <span class="rating__stars active"></span>
+                        <span class="rating__stars active"></span>
+                        <span class="rating__stars"></span>
+                        <span class="rating__stars"></span>
+                    </div>
+                </div>
 
-            <div class="skills__info programs-info">
-                <img class="programs-img" src="C:\Users\user\Desktop\my\level-basic\images\forbasicAe.png" width="89px"
-                    height="89px">
-                <p class="skills__info programs-name">Adobe<br>After Effects</p>
-                <img class="rating-img" src="C:\Users\user\Desktop\my\level-basic\images\forbasicStars.png"
-                    width="166px" height="26">
-            </div>
+                <div class="skills__info programs-info">
+                    <img class="programs-img" src="C:\Users\user\Desktop\my\level-basic\images\forbasicAi.png"
+                        width="89px" height="89px">
+                    <p class="skills__info programs-name">Adobe<br>Illustrator</p>
+                    <div class="rating">
+                        <span class="rating__stars active"></span>
+                        <span class="rating__stars active"></span>
+                        <span class="rating__stars active"></span>
+                        <span class="rating__stars active"></span>
+                        <span class="rating__stars"></span>
+                    </div>
 
-            <div class="skills__info programs-info">
-                <img class="programs-img" src="C:\Users\user\Desktop\my\level-basic\images\forbasicAi.png" width="89px"
-                    height="89px">
-                <p class="skills__info programs-name">Adobe<br>Illustrator</p>
-                <img class="rating-img" src="C:\Users\user\Desktop\my\level-basic\images\forbasicStars.png"
-                    width="166px" height="26">
-            </div>
+                </div>
 
-            <div class="skills__info programs-info">
-                <img class="programs-img" src="C:\Users\user\Desktop\my\level-basic\images\forbasicFigma.png"
-                    width="89px" height="89px">
-                <p class="skills__info programs-name">Figma</p>
-                <img class="rating-img" src="C:\Users\user\Desktop\my\level-basic\images\forbasicStars.png"
-                    width="166px" height="26">
+                <div class="skills__info programs-info">
+                    <img class="programs-img" src="C:\Users\user\Desktop\my\level-basic\images\forbasicFigma.png"
+                        width="89px" height="89px">
+                    <p class="skills__info programs-name">Figma</p>
+                    <div class="rating">
+                        <span class="rating__stars active"></span>
+                        <span class="rating__stars active"></span>
+                        <span class="rating__stars active"></span>
+                        <span class="rating__stars active"></span>
+                        <span class="rating__stars"></span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -106,16 +128,20 @@
             <h2 class="contacts__section-title "><a name="contacts">Contacts</a></h2>
             <p class="contacts__info">Want to know more or just chat?<br>You are welcome!</p>
             <p class="send"><button class="send-message">Send message</button></p>
-            <div class="social-contacts">
-                <a class="contacts-link" href="http:\\www.Instagram.com"><img class="contacts-img--1" src="images/inst.png" width="40" height="40"></a>
-                <a class="contacts-link" href="http:\\www.linkedIN.com"><img class="contacts-img" src="images/in.png" width="40" height="40"></a>
-                <a class="contacts-link" href="http:\\www.Behance.com"><img class="contacts-img" src="images/be.png" width="40" height="40"></a>
-                <a class="contacts-link" href="http:\\www.Drible.com"><img class="contacts-img" src="images/ball.png" width="40" height="40"></a>
-                        
+            <div class="social-contacts flex-block">
+                <a class="icon inst-ico" href="http:\\www.Instagram.com">
+                </a>
+                <a class="icon linkedin-ico" href="http:\\www.linkedIN.com">
+                </a>
+                <a class="icon be-ico" href="http:\\www.Behance.com">
+                </a>
+                <a class="icon drible-ico" href="http:\\www.Drible.com">
+                </a>
             </div>
-            <p class="contacts__info gray-info">Like me on<br>linkedIN,Inst...</p>
+            <p class="contacts__info gray-info">Like me on<br>linkedIN, Instagram, Behance, Drible</p>
         </div>
     </footer>
 
 </body>
+
 </html>
