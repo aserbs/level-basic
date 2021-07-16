@@ -1,10 +1,62 @@
-.container {    
+html, body, div, span, applet, object, iframe,
+ blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+
+
+
+.body {
+    z-index: 8;
+}
+
+.container {
     width: 950px;
-    margin: auto;
+    margin: 0 auto;
 }
 
 .gray {
-    
     background-color: #F6F6F6;
 }
 
@@ -14,6 +66,12 @@
 }
 
 .menu {
+    position: sticky;
+    margin: 0 auto;
+    top: 0;
+    z-index: 9;
+    width: 950px;
+    background: #fff;
     height: 70px;
     align-items: center;
     font-size: 18px;
@@ -38,19 +96,85 @@
 }
 
 .header__slogan {
+    animation-name: slogan-color;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+
     font-size: 47px;
     line-height: 47px;
     margin: 0;
 }
 
+@keyframes slogan-color {
+    0% {
+        color: cornflowerblue;
+    }
+
+    25% {
+        color: rgb(9, 172, 71);
+    }
+
+    50% {
+        color: rgb(176, 179, 6);
+    }
+
+    100% {
+        color: blueviolet;
+    }
+}
+
 .my-info {
+    animation: my-info-anim 6s 3 alternate;
+    position: relative;
     font-size: 18px;
     line-height: 22px;
 }
 
+@keyframes my-info-anim {
+    0% {
+        left: 0px;
+        top: 0px;
+        opacity: 0;
+    }
+
+    25% {
+        left: 0px;
+        top: -60px;
+    }
+
+    50% {
+        left: 50px;
+        top: -60px;
+    }
+
+    75% {
+        left: 50px;
+        top: 0px;
+    }
+
+    100% {
+        left: 0px;
+        top: 0px;
+        opacity: 1;
+    }
+}
+
 .language-menu__p {
+    animation: lang-menu-anim 3s linear 4 alternate;
+    position: relative;
+
     margin-left: auto;
     margin-bottom: 0;
+}
+
+@keyframes lang-menu-anim {
+    from {
+        top: 0px;
+    }
+
+    to {
+        top: -100px;
+    }
 }
 
 .language-menu {
@@ -66,13 +190,29 @@
 }
 
 .header__avatar {
+    animation: bounceIn 3s linear 1;
     text-align: center;
     margin: 0 auto;
-
 }
 
 .avatar__img {
     width: 100%;
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.1);
+        opacity: 0;
+    }
+
+    60% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
 
 .about-me {
@@ -172,6 +312,10 @@
     text-align: center;
 }
 
+.contacts__info::selection {
+    background: coral;
+}
+
 .send {
     text-align: center;
 }
@@ -190,13 +334,7 @@
 
 .send-message:hover {
     background-color: #F6F6F6;
-    color:black;
-}
-
-.social-contacts {
-    justify-content: center;
-    text-align: center;
-    padding-top: 20px;
+    color: black;
 }
 
 .gray-info {
@@ -207,32 +345,140 @@
     padding-bottom: 40px;
 }
 
-.icon {
-    height: 40px;
-    width: 40px;
-    margin: 20px;
-}
-
-.inst-ico {
-    cursor: pointer;
-    background: url(images/inst.png) no-repeat;
-    background-size: 40px 40px;
+.social-contacts.flex-block {
+    justify-content: center;
+    text-align: center;
+    padding-top: 20px;
 }
 
 .linkedin-ico {
-    cursor: pointer;
     background: url(images/in.png) no-repeat;
-    background-size: 40px 40px;
 }
 
 .be-ico {
-    cursor: pointer;
     background: url(images/be.png) no-repeat;
-    background-size: 40px 40px;
+}
+
+.inst-ico {
+    background: url(images/inst.png) no-repeat;
 }
 
 .drible-ico {
-    cursor: pointer;
     background: url(images/ball.png) no-repeat;
+}
+
+.icon {
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+    margin: 20px;
     background-size: 40px 40px;
+}
+
+.footer-main {
+    border-bottom: 2px solid black;
+}
+
+
+
+/**tests**/
+.way1-parent {
+    width: 100%;
+    height: 100%;
+    display: table;
+    background-color: burlywood;
+}
+
+.way1-child {
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.way2-parent {
+    background-color: coral;
+    width: 100%;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.way2-child {
+    background-color: chartreuse;
+    width: 100px;
+    margin: 0 auto
+}
+
+.way3-parent {
+    display: flex;
+    width: 100%;
+    height: 100px;
+    background-color: cornflowerblue;
+    justify-content: center;
+    align-items: center;
+}
+
+.way3-child {
+    background-color: chartreuse;
+    width: 100px;
+    text-align: center;
+}
+
+
+
+.static {
+    width: 60px;
+    height: 60px;
+    background-color: skyblue;
+}
+
+.Xmove {
+    text-align: center;
+    transform: translateX(50%);
+    background-color: pink;
+    width: 60px;
+    height: 60px;
+}
+
+.Ymove {
+    width: 60px;
+    height: 60px;
+    background-color: skyblue;
+    transform: translateY(50%);
+}
+
+.left-move {
+    background-color: pink;
+    width: 60px;
+    height: 60px;
+    position: relative;
+    left: 50%;
+}
+
+.top-move {
+    background-color: skyblue;
+    width: 60px;
+    height: 60px;
+    position: relative;
+    top: 40px;
+    left: 35%;
+}
+
+
+
+.content-box{
+    height: 100px;
+    width: 60px;
+    border: 8px solid lawngreen;
+    background: lightblue;
+    
+    box-sizing: content-box;
+}
+
+.border-box {
+    height: 100px;
+    width: 60px;
+    border: 8px solid lawngreen;
+    background: lightblue;
+
+    box-sizing: border-box;
 }
