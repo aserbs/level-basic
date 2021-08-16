@@ -203,3 +203,340 @@ function opposite(num) {
     console.log(num2)
 }
 opposite(123)
+// Получить строкове название дня недели по номеру 
+//дня (let date = new Date(2019, 08, 26); // 26 сентября 2019 года)
+
+function getStrDay(y, m, d) {
+    let date = new Date(y, m, d)
+    console.log(new Intl.DateTimeFormat('ru-RU', {
+        weekday: 'long'
+    }).format(date))
+}
+// getStrDay(2019, 08, 26)
+
+
+// Вводим число (0-999) , получаем строку с прописью числа.
+
+
+function numToWords(n) {
+    let num1 = {
+        0: 'ноль',
+        1: 'один',
+        2: 'два',
+        3: 'три',
+        4: 'четыре',
+        5: 'пять',
+        6: 'шесть',
+        7: 'семь',
+        8: 'восемь',
+        9: 'девять'
+    }
+    let num2 = {
+        11: 'одиннадцать',
+        12: 'двенадцать',
+        13: 'тринадцать',
+        14: 'четырнадцать',
+        15: 'пятнадцать',
+        16: 'шестнадцать',
+        17: 'семнадцать',
+        18: 'восемнадцать',
+        19: 'девятнадцать'
+    }
+    let num3 = {
+        10: 'десять',
+        20: 'двадцать',
+        30: 'тридцать',
+        40: 'сорок',
+        50: 'пятьдесят',
+        60: 'шестьдесят',
+        70: 'семьдесят',
+        80: 'восемьдесят',
+        90: 'девяносто'
+    }
+    let num4 = {
+        100: 'сто',
+        200: 'двести',
+        300: 'триста',
+        400: 'четыреста',
+        500: 'пятьсот',
+        600: 'шестьсот',
+        700: 'семьсот',
+        800: 'восемьсот',
+        900: 'девятьсот'
+    }
+
+    if (n < 100) {
+        n1 = n % 10
+        n2 = n - n1
+
+        switch (true) {
+            case (n < 10):
+                return num1[n]
+
+            case (n == 10):
+                return num3[n]
+
+            case (n > 20):
+                return num3[n2] + ' ' + num1[n1]
+
+            case (n > 19):
+                return num3[n]
+
+            case (10 < n < 20):
+                return num2[n]
+        }
+    } else if (n < 1000) {
+        n1 = n % 100
+        n2 = n1 % 10
+        n3 = n1 - n2
+        n4 = n - n1
+
+        switch (true) {
+            case (n1 === 0):
+                return num4[n]
+
+            case (n1 in num3):
+                h = n - n1
+                return num4[h] + ' ' + num3[n1]
+
+            case (n1 === 10 | n1 in num3):
+                h = n - n1
+                return num4[h] + ' ' + num3[n1]
+
+            case (n1 < 10):
+                h = n - n2
+                return num4[h] + ' ' + num1[n2]
+
+            case (n1 > 20):
+                return num4[n4] + ' ' + num3[n3] + ' ' + num1[n2]
+
+            case (10 < n1 < 20):
+                h = n - n1
+                return num4[h] + ' ' + num2[n1]
+        }
+    } else if (n < 0 && n > 999) {
+        console.log('введите число в диапозоне от 0 до 999')
+    }
+}
+
+// console.log(numToWords(301))
+// console.log(numToWords(311))
+// console.log(numToWords(320))
+// console.log(numToWords(321))
+// console.log(numToWords(2))
+// console.log(numToWords(0))
+// console.log(numToWords(11))
+// console.log(numToWords(10))
+
+
+
+//Вводим строку, которая содержит число, написанное прописью (0-999). Получить само число (Ввели девятьсот девяносто девять = получаем 999) (аналогично только наоборот)  
+
+function wordsToNums(n) {
+    let units = {
+        'ноль': 0,
+        'один': 1,
+        'два': 2,
+        'три': 3,
+        'четыре': 4,
+        'пять': 5,
+        'шесть': 6,
+        'семь': 7,
+        'восемь': 8,
+        'девять': 9
+    }
+    let moreThenUnits = {
+        'одиннадцать': 11,
+        'двенадцать': 12,
+        'тринадцать': 13,
+        'четырнадцать': 14,
+        'пятнадцать': 15,
+        'шестнадцать': 16,
+        'семнадцать': 17,
+        'восемнадцать': 18,
+        'девятнадцать': 19
+    }
+    let dozens = {
+        'десять': 10,
+        'двадцать': 20,
+        'тридцать': 30,
+        'сорок': 40,
+        'пятьдесят': 50,
+        'шестьдесят': 60,
+        'семьдесят': 70,
+        'восемьдесят': 80,
+        'девяносто': 90
+    }
+    let hundreds = {
+        'сто': 100,
+        'двести': 200,
+        'триста': 300,
+        'четыреста': 400,
+        'пятьсот': 500,
+        'шестьсот': 600,
+        'семьсот': 700,
+        'восемьсот': 800,
+        'девятьсот': 900
+    }
+    let arr1 = n.split(' ')
+    let arr2 = []
+    let i = 0
+    while (i <= arr1.length) {
+        if (arr1[i] in units) {
+            arr2.push(units[arr1[i]])
+        } else if (arr1[i] in moreThenUnits) {
+            arr2.push(moreThenUnits[arr1[i]])
+        } else if (arr1[i] in dozens) {
+            arr2.push(dozens[arr1[i]])
+        } else if (arr1[i] in hundreds) {
+            arr2.push(hundreds[arr1[i]])
+        }
+        i++
+    }
+    let result = arr2.reduce((sum, current) => sum + current, 0)
+    console.log(result)
+}
+
+// wordsToNums('двести двадцать три')
+// wordsToNums('ноль')
+// wordsToNums('двенадцать')
+// wordsToNums('двести двенадцать')
+
+// Найти расстояние между двумя точками в двумерном декартовом пространстве
+
+
+function distance(a, b) {
+    let result = Math.sqrt(Math.pow((a[0] - b[0]), 2) + Math.pow((a[1] - b[1]), 2))
+    console.log(result)
+}
+// distance([4, 3], [9, 7])
+
+
+// Вводим число (до 999 миллиардов) , получаем строку с прописью числа.
+
+
+
+// Найти минимальный элемент массива
+function minElem(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] < arr[0]) {
+            arr[0] = arr[i]
+        }
+    }
+    console.log(arr[0])
+}
+// minElem([10, 23, 124, 22, 11, 4, 5])
+// Найти максимальный элемент массива
+function maxElem(arr) {
+    for (let i = 0; i < arr.length; i++)
+        if (arr[i] > arr[0]) {
+            arr[0] = arr[i]
+        }
+    console.log(arr[0])
+}
+// maxElem([10, 23, 124, 22, 11, 4, 5])
+
+//нашел метод по-удобнее)  
+// console.log(Math.min.apply(null, [10, 23, 124, 22, 11, 4, 5]))
+// console.log(Math.max.apply(null, [10, 23, 124, 22, 11, 4, 5]))
+
+
+// Найти индекс минимального элемента массива
+function minIndex(arr) {
+    let min = arr[0]
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] < min) {
+            minInd = i
+            min = arr[i]
+        }
+    }
+    console.log(minInd)
+}
+// minIndex([10, 23, 124, 22, 11, 4, 5])
+
+// Найти индекс максимального элемента массива
+function maxIndex(arr) {
+    let max = arr[0]
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > max) {
+            maxInd = i
+            max = arr[i]
+        }
+    }
+    console.log(maxInd)
+}
+// maxIndex([10, 23, 124, 22, 11, 4, 5])
+
+
+function minIndex2(arr) {
+    arr.indexOf(Math.min.apply(null, arr))
+}
+// minIndex([10, 23, 124, 22, 11, 4, 5])    чего-то я сразу до этого способа не додумался :)
+
+
+// Посчитать сумму элементов массива с нечетными индексами
+function sumOddIndexes(arr) {
+    let Arr = []
+    for (let i = 0; i < arr.length; i++) {
+        if (i % 2 != 0) {
+            Arr.push(arr[i])
+        }
+    }
+    console.log(`элементы с нечетными индексами ${Arr}`)
+    let result = Arr.reduce((sum, current) => sum + current, 0)
+    console.log(`сумма этих элементов ${result}`)
+}
+// sumOddIndexes([10, 23, 124, 22, 11, 4, 5, 7])
+
+
+// Сделать реверс массива
+function rvrs(arr) {
+    reverseArr = arr.reverse()
+    console.log(reverseArr)
+}
+// rvrs([1, 2, 3, 4])
+
+
+// Посчитать количество нечетных элементов массива
+function amountOddNums(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] % 2 == 0) {
+            arr.shift(arr[i])
+        }
+    }
+    console.log(arr.length)
+}
+
+// amountOddNums([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 13])
+
+
+// Поменять местами первую и вторую половину массива , 1 2 3 4 = 3 4 1 2
+function changeHalf(arr) {
+    if (arr.length % 2 == 0) {
+        middle = arr.length / 2 - 1
+    } else {
+        middle = arr.length / 2 - 0.5
+    }
+    let firstHalf = arr.splice(0, arr[middle])
+    let result = arr.concat(firstHalf)
+    console.log(result)
+}
+// changeHalf([1, 2, 3, 4])
+
+
+
+//Сортировка массива пузырьком
+
+function bubbleSort(arr) {
+    for (let j = arr.length - 1; j > 0; j--) {
+        for (let i = 0; i < j; i++) {
+            if (arr[i] > arr[i + 1]) {
+                let bigger = arr[i]
+                arr[i] = arr[i + 1]
+                arr[i + 1] = bigger
+            }
+        }
+    }
+    console.log(arr)
+}
+bubbleSort([1, 3, 61, 23, 5, 6, 2])
